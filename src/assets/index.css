@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Kurale-Regular';
-  src: url('fonts/Kurale-Regular.ttf') format('truetype');
+  font-family: 'Kurale';
+  src: url('fonts/Kurale-Regular.woff2') format('woff2'),
+      url('fonts/Kurale-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
+
  
 @layer base {
   :root {
