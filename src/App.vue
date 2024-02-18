@@ -4,7 +4,7 @@
 <template>
   <header>
     <div>
-      <h1 class="font-[Kurale] text-3xl">Claes Nymand Nilsson</h1>
+      <h1 class="font-[Kurale-Regular] text-3xl">Claes Nymand Nilsson</h1>
       <nav>
         <RouterLink to="/">
           <Button variant="link">

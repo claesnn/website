@@ -13,9 +13,6 @@ module.exports = {
 	],
   
   theme: {
-    fontFamily: {
-      'Kurale': 'Kurale'
-    },
     container: {
       center: true,
       padding: "2rem",
