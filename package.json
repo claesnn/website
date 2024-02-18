@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@unhead/vue": "^1.8.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-vue-next": "^0.331.0",
