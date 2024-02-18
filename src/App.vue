@@ -18,6 +18,10 @@
             <Button variant="link">
               About</Button>
           </RouterLink>
+          <RouterLink to="/blog">
+            <Button variant="link">
+              Blog</Button>
+          </RouterLink>
         </nav>
       </div>
     </header>
