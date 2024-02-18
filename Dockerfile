@@ -2,12 +2,15 @@ FROM node:20 as build
 
 WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm install --production
+
 COPY . .
 
-RUN npm install
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 WORKDIR /
 
