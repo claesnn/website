@@ -25,7 +25,7 @@
         </nav>
       </div>
     </header>
-    <main class="px-3 py-2 max-w-7xl mb-auto mx-auto">
+    <main class="px-3 py-2 max-w-7xl mb-auto mx-auto w-full">
       <RouterView />
     </main>
     <footer class="footer border-t border-slate-200">
