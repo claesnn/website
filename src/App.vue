@@ -6,7 +6,7 @@
     <header class="header border-b border-slate-200">
       <div class="flex justify-between max-w-7xl mx-auto px-3 py-2 place-items-center">
         <RouterLink to="/">
-          <h1 class="font-[Kurale] text-lg sm:text-2xl">Claes Nymand Nilsson</h1>
+          <h1 class="font-[Kurale] text-lg sm:text-xl">Claes Nymand Nilsson</h1>
         </RouterLink>
         <nav>
           <RouterLink to="/">

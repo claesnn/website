@@ -3,12 +3,37 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Kurale';
-  src: url('fonts/Kurale-Regular.woff2') format('woff2'),
-      url('fonts/Kurale-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Inter-400.woff2') format('woff2');
+  ascent-override:	0.96875;
+  descent-override: 	0.2414772727;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter-700';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Inter-700.woff2') format('woff2');
+  src: url('fonts/Inter-400.woff2') format('woff2');
+  ascent-override:	0.96875;
+  descent-override: 	0.2414772727;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Kurale';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Kurale-400.woff2') format('woff2');
+  ascent-override:	1.095;
+  descent-override: 	0.383;
+  line-gap-override: 0;
 }
 
  
@@ -83,6 +108,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-[Inter,sans-serif];
   }
 }
