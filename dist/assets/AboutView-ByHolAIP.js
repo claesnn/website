@@ -1,1 +1,0 @@
-import{E as e,f as s,h as t,A as o}from"./index-DY4BIlai.js";const c={},a={class:"about"},n=o("h1",null,"This is an about page",-1),_=[n];function r(i,d){return s(),t("div",a,_)}const h=e(c,[["render",r]]);export{h as default};

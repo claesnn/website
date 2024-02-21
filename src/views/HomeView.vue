@@ -30,11 +30,11 @@ useHead({
         praesentium?</p>
       <Carousel class="m-10 max-h-screen">
         <CarouselContent>
-          <CarouselItem><img src="/images/DSCF6640.webp"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7453.webp" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7477.webp" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7842.webp" loading="lazy"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF6640.webp" width="1125px" height="752px"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy" width="1125px" height="752px"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7453.webp" loading="lazy" width="1125px" height="752px"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7477.webp" loading="lazy" width="1125px" height="752px"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7842.webp" loading="lazy" width="1125px" height="752px"></CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
