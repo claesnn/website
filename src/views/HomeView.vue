@@ -30,11 +30,11 @@ useHead({
         praesentium?</p>
       <Carousel class="m-10 max-h-screen">
         <CarouselContent>
-          <CarouselItem><img src="/images/background.webp"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7046.jpg" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7453.jpg" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7477.jpg" loading="lazy"></CarouselItem>
-          <CarouselItem><img src="/images/DSCF7842.jpg" loading="lazy"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF6640.webp"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7453.webp" loading="lazy"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7477.webp" loading="lazy"></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7842.webp" loading="lazy"></CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
@@ -60,16 +60,11 @@ useHead({
     at eius necessitatibus perferendis illum, aspernatur dolore dolorum provident ipsum iusto ipsa molestias aperiam
     praesentium?</p>
   <div class="grid grid-cols-4 gap-2 ">
-    <img src="/images/background.webp">
-    <img src="/images/background.webp">
-    <img src="/images/background.webp">
-    <img src="/images/background.webp">
-    <img src="/images/background.webp">
-    <img src="/images/background.webp">
+
   </div>
 
   <div class="grid grid-cols-2 gap-4 my-5 mt-15">
-    <div><img src="/images/background.webp"></div>
+    <div></div>
     <div>
       <h1 class="font-[Kurale] text-5xl mb-5">Photography</h1>
       <p>I do photos</p>
