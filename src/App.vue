@@ -1,24 +1,34 @@
-<script setup lang="ts">
-import type { Github } from "lucide-vue-next"
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="flex flex-col min-h-screen">
     <header class="header border-b border-slate-200">
       <div
-        class="flex justify-between max-w-7xl mx-auto px-3 py-2 place-items-center">
+        class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
         <RouterLink to="/">
           <h1 class="font-[Kurale] text-lg sm:text-xl">Claes Nymand Nilsson</h1>
         </RouterLink>
         <nav>
           <RouterLink to="/">
-            <Button variant="link"> Home </Button>
+            <Button
+              variant="link"
+              class="px-2 sm:px-4">
+              Home
+            </Button>
           </RouterLink>
           <RouterLink to="/about">
-            <Button variant="link"> About</Button>
+            <Button
+              variant="link"
+              class="px-2 sm:px-4">
+              About</Button
+            >
           </RouterLink>
           <RouterLink to="/blog">
-            <Button variant="link"> Blog</Button>
+            <Button
+              variant="link"
+              class="px-2 sm:px-4">
+              Blog</Button
+            >
           </RouterLink>
         </nav>
       </div>

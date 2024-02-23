@@ -1,0 +1,1 @@
+import{u as e}from"./vue.f36acd1f-CtszAhV0.js";import{d as t,c as o,o as s,t as a}from"./index-X1thGZKn.js";const n={class:"about"},c=a("h1",null,"This is an about page",-1),_=[c],m=t({__name:"AboutView",setup(i){return e({title:"Claes Nymand Nilsson - About"}),(r,u)=>(s(),o("div",n,_))}});export{m as default};
