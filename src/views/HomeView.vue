@@ -24,15 +24,17 @@ const { toast } = useToast()
 const onSubmit = form.handleSubmit((values) => {
   const animal = values.animal.toLowerCase()
   const message =
-    animal === "cat"
-      ? "Meow!"
-      : animal === "dog"
+    animal.includes("cat") || animal.includes("kitten")
+      ? "🎉🎉🎉 You guessed it! Meow! 🎉🎉🎉"
+      : animal.includes("dog")
       ? "Close, but no cigar!"
-      : animal === "dolphin"
+      : animal.includes("dolphin")
       ? "Great guess, but no, equally playful though!"
-      : animal === "shark"
+      : animal.includes("shark")
       ? "No, but they're both predators"
-      : animal === "hamster"
+      : animal.includes("hamster") ||
+        animal.includes("guinea pig") ||
+        animal.includes("rabbit")
       ? "No, but they're both small and cute"
       : "Try again!"
   toast({
