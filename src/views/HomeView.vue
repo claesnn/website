@@ -127,8 +127,9 @@ const onSubmit = form.handleSubmit((values) => {
           implementing automation. Whilst I have the capacity to quickly pick up
           and work with any language, I prefer to work with Python and
           TypeScript. For example, this website is built with Vite, Vue 3 and
-          Tailwind CSS and built as a SPA. Try the example below and if you're
-          up for it, I have some more example projects.
+          Tailwind CSS and built as a SPA. The site is deployed using Docker on
+          a cloud service. Try the example below and if you're up for it, I have
+          some more example projects.
         </p>
       </div>
       <Card class="max-w-sm p-6 mx-auto my-10">
@@ -144,7 +145,7 @@ const onSubmit = form.handleSubmit((values) => {
               <FormControl>
                 <Input
                   v-bind="componentField"
-                  class="w-80" />
+                  class="w-full" />
               </FormControl>
               <FormDescription>Please enter the cutest animal</FormDescription>
               <FormMessage />
@@ -168,7 +169,7 @@ const onSubmit = form.handleSubmit((values) => {
       <div class="bg-slate-50 p-6 rounded-lg">
         <p class="max-w-xl text-justify mx-auto">
           I've been working in biotech for the past 7+ years and I'm currently
-          employed with Novo Nordisk. I may blog about Biotech and Software in
+          employed with Novo Nordisk. I may write about Biotech and Software in
           the future. Please reach out if you're interesting in collaborating or
           have any questions to any of my hopefully many articles in the future.
         </p>
