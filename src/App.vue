@@ -10,18 +10,17 @@
           </div>
         </RouterLink>
         <nav>
-          <RouterLink to="/">
+          <RouterLink to="/photography">
             <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              Home
-            </Button>
+              Photography</Button>
           </RouterLink>
-          <RouterLink to="/about">
+          <RouterLink to="/software">
             <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              About</Button>
+              Software</Button>
           </RouterLink>
-          <RouterLink to="/blog">
+          <RouterLink to="/biotech">
             <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              Blog</Button>
+              Biotech</Button>
           </RouterLink>
         </nav>
       </div>
