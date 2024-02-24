@@ -5,8 +5,8 @@
     <header class="header border-b">
       <div class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
         <RouterLink to="/">
-          <div class="flex place-items-center text-primary">
-            <h1 class="font-[Kurale] text-lg sm:text-xl">Claes Nymand Nilsson</h1>
+          <div class="flex place-items-center">
+            <h1 class="font-[Kurale] text-lg sm:text-xl">CNN</h1>
           </div>
         </RouterLink>
         <nav>
@@ -74,7 +74,6 @@
 <style>
 .router-link-active button {
   text-decoration: underline;
-  @apply text-primary;
 }
 
 @font-face {

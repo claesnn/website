@@ -41,35 +41,29 @@ const onSubmit = form.handleSubmit((values) => {
     description: message,
   })
 })
+
+const navigate = (url: string) => {
+  window.location.href = url
+}
 </script>
 
 <template>
-  <h1 class="font-[Kurale] text-6xl text-center mt-10 mb-2">
-    Hi, I'm <strong>Claes Nymand Nilsson</strong> 👨‍🔬
+  <h1 class="font-[Kurale] text-4xl md:text-6xl text-center mt-10 mb-2">
+    Claes Nymand Nilsson
   </h1>
-  <p class="text-center mb-20 text-2xl text-slate-600">
-    Welcome to my personal site, where I share
-    <RouterLink to="/photography"><strong><u>photography</u></strong></RouterLink>,
-    <RouterLink to="/software"><strong><u>software</u></strong></RouterLink>
-    and talk
-    <RouterLink to="/biotech"><strong><u>biotech</u></strong></RouterLink>!
+  <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
+    I am biotech scientist with a flair for <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink
+      to="/software"><u>coding</u></RouterLink> and sports.
+    I believe in the value of sharing and on this site you can browse through all of my published work.
   </p>
 
-  <Card class="my-6">
+  <Card class="my-10">
     <CardHeader>
       <h1 class="font-[Kurale] text-5xl text-center">Photography</h1>
     </CardHeader>
     <CardContent>
-      <div class="bg-slate-50 p-6 rounded-lg">
-        <p class="max-w-xl text-justify mx-auto">
-          I enjoy the creative outlet of photography and the enhanced experience
-          of new places. I believe photography has changed my perspective on the
-          world around me and I hope to share some of that excitement, wonder
-          and beauty with you. Enjoy the photos and feel free to reach out on
-          Instagram for a chat (everyone's welcome)!
-        </p>
-      </div>
-      <Carousel class="m-10 max-h-screen">
+
+      <Carousel class="mx-10 max-h-screen">
         <CarouselContent>
           <CarouselItem><img src="/images/DSCF6640.webp" width="1125px" height="752px" /></CarouselItem>
           <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
@@ -83,24 +77,13 @@ const onSubmit = form.handleSubmit((values) => {
     </CardContent>
   </Card>
 
-  <Card class="my-6">
+  <Card class="my-10">
     <CardHeader>
       <h1 class="font-[Kurale] text-5xl text-center">Software</h1>
     </CardHeader>
     <CardContent>
-      <div class="bg-slate-50 p-6 rounded-lg">
-        <p class="max-w-xl text-justify mx-auto">
-          I've been coding since I was very young making websites and
-          implementing automation. Whilst I have the capacity to quickly pick up
-          and work with any language, I prefer to work with Python and
-          TypeScript. For example, this website is built with Vite, Vue 3 and
-          Tailwind CSS and built as a SPA. The site is deployed using Docker on
-          a cloud service. Try the example below and if you're up for it, I have
-          some more example projects.
-        </p>
-      </div>
-      <Card class="max-w-sm p-6 mx-auto my-10">
-        <h1 class="text-xl font-bold mb-3">Animal guessing game</h1>
+      <Card class="max-w-sm p-6 mx-auto">
+        <h1 class="text-xl font-bold mb-3">Animal quiz</h1>
         <form @submit="onSubmit" class="flex flex-col">
           <FormField v-slot="{ componentField }" name="animal">
             <FormItem>
@@ -118,19 +101,35 @@ const onSubmit = form.handleSubmit((values) => {
     </CardContent>
   </Card>
 
-  <Card class="my-6">
+  <Card class="my-10">
     <CardHeader>
       <h1 class="font-[Kurale] text-5xl text-center">Biotech</h1>
     </CardHeader>
     <CardContent>
-      <div class="bg-slate-50 p-6 rounded-lg">
-        <p class="max-w-xl text-justify mx-auto">
-          I've been working in biotech for the past 7+ years and I'm currently
-          employed with Novo Nordisk. I may write about Biotech and Software in
-          the future. Please reach out if you're interesting in collaborating or
-          have any questions to any of my hopefully many articles in the future.
-        </p>
-      </div>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Year</TableHead>
+            <TableHead>Title</TableHead>
+            <TableHead>Authors</TableHead>
+            <TableHead>DOI</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow class="hover:cursor-pointer" @click="() => navigate('https://doi.org/10.1038/srep18016')">
+            <TableCell>2015</TableCell>
+            <TableCell>Versatile microscale screening platform for improving
+              recombinant protein productivity in Chinese
+              hamster ovary cells</TableCell>
+            <TableCell>Henning Gram Hansen, <strong>Claes Nymand
+                Nilsson</strong>, Anne Mathilde
+              Lund,
+              Stefan Kol, Lise Marie Grav, Magnus Lundqvist, Johan Rockberg, Gyun Min Lee, Mikael Rørdam Andersen, Helene
+              Faustrup Kildegaard</TableCell>
+            <TableCell>10.1038/srep18016</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </CardContent>
   </Card>
 </template>
