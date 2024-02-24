@@ -27,16 +27,16 @@ const onSubmit = form.handleSubmit((values) => {
     animal.includes("cat") || animal.includes("kitten")
       ? "🎉🎉🎉 You guessed it! Meow! 🎉🎉🎉"
       : animal.includes("dog")
-      ? "Close, but no cigar!"
-      : animal.includes("dolphin")
-      ? "Great guess, but no, equally playful though!"
-      : animal.includes("shark")
-      ? "No, but they're both predators"
-      : animal.includes("hamster") ||
-        animal.includes("guinea pig") ||
-        animal.includes("rabbit")
-      ? "No, but they're both small and cute"
-      : "Try again!"
+        ? "Close, but no cigar!"
+        : animal.includes("dolphin")
+          ? "Great guess, but no, equally playful though!"
+          : animal.includes("shark")
+            ? "No, but they're both predators"
+            : animal.includes("hamster") ||
+              animal.includes("guinea pig") ||
+              animal.includes("rabbit")
+              ? "No, but they're both small and cute"
+              : "Try again!"
   toast({
     description: message,
   })
@@ -44,21 +44,15 @@ const onSubmit = form.handleSubmit((values) => {
 </script>
 
 <template>
-  <h1 class="font-Kurale text-6xl text-center mt-10 mb-2">
+  <h1 class="font-[Kurale] text-6xl text-center mt-10 mb-2">
     Hi, I'm <strong>Claes Nymand Nilsson</strong> 👨‍🔬
   </h1>
-  <p class="text-center mb-20 text-2xl text-slate-700">
+  <p class="text-center mb-20 text-2xl text-slate-600">
     Welcome to my personal site, where I share
-    <RouterLink to="/photography"
-      ><strong><u>photography</u></strong></RouterLink
-    >,
-    <RouterLink to="/software"
-      ><strong><u>software</u></strong></RouterLink
-    >
+    <RouterLink to="/photography"><strong><u>photography</u></strong></RouterLink>,
+    <RouterLink to="/software"><strong><u>software</u></strong></RouterLink>
     and talk
-    <RouterLink to="/biotech"
-      ><strong><u>biotech</u></strong></RouterLink
-    >!
+    <RouterLink to="/biotech"><strong><u>biotech</u></strong></RouterLink>!
   </p>
 
   <Card class="my-6">
@@ -77,40 +71,11 @@ const onSubmit = form.handleSubmit((values) => {
       </div>
       <Carousel class="m-10 max-h-screen">
         <CarouselContent>
-          <CarouselItem
-            ><img
-              src="/images/DSCF6640.webp"
-              width="1125px"
-              height="752px"
-          /></CarouselItem>
-          <CarouselItem
-            ><img
-              src="/images/DSCF7046.webp"
-              loading="lazy"
-              width="1125px"
-              height="752px"
-          /></CarouselItem>
-          <CarouselItem
-            ><img
-              src="/images/DSCF7453.webp"
-              loading="lazy"
-              width="1125px"
-              height="752px"
-          /></CarouselItem>
-          <CarouselItem
-            ><img
-              src="/images/DSCF7477.webp"
-              loading="lazy"
-              width="1125px"
-              height="752px"
-          /></CarouselItem>
-          <CarouselItem
-            ><img
-              src="/images/DSCF7842.webp"
-              loading="lazy"
-              width="1125px"
-              height="752px"
-          /></CarouselItem>
+          <CarouselItem><img src="/images/DSCF6640.webp" width="1125px" height="752px" /></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7453.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7477.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
+          <CarouselItem><img src="/images/DSCF7842.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
@@ -136,28 +101,18 @@ const onSubmit = form.handleSubmit((values) => {
       </div>
       <Card class="max-w-sm p-6 mx-auto my-10">
         <h1 class="text-xl font-bold mb-3">Animal guessing game</h1>
-        <form
-          @submit="onSubmit"
-          class="flex flex-col">
-          <FormField
-            v-slot="{ componentField }"
-            name="animal">
+        <form @submit="onSubmit" class="flex flex-col">
+          <FormField v-slot="{ componentField }" name="animal">
             <FormItem>
               <FormLabel>Animal</FormLabel>
               <FormControl>
-                <Input
-                  v-bind="componentField"
-                  class="w-full" />
+                <Input v-bind="componentField" class="w-full" />
               </FormControl>
               <FormDescription>Please enter the cutest animal</FormDescription>
               <FormMessage />
             </FormItem>
           </FormField>
-          <Button
-            type="submit"
-            class="mt-4"
-            >Submit</Button
-          >
+          <Button type="submit" class="mt-4">Submit</Button>
         </form>
       </Card>
     </CardContent>

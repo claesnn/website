@@ -2,23 +2,25 @@
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <header class="header border-b border-slate-200">
+    <header class="header border-b">
       <div class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
         <RouterLink to="/">
-          <h1 class="font-[Kurale] text-lg sm:text-xl">Claes Nymand Nilsson</h1>
+          <div class="flex place-items-center text-primary">
+            <h1 class="font-[Kurale] text-lg sm:text-xl">Claes Nymand Nilsson</h1>
+          </div>
         </RouterLink>
         <nav>
           <RouterLink to="/">
-            <Button variant="link" class="px-2 sm:px-4">
+            <Button variant="link" class="px-2 sm:px-4 text-foreground">
               Home
             </Button>
           </RouterLink>
           <RouterLink to="/about">
-            <Button variant="link" class="px-2 sm:px-4">
+            <Button variant="link" class="px-2 sm:px-4 text-foreground">
               About</Button>
           </RouterLink>
           <RouterLink to="/blog">
-            <Button variant="link" class="px-2 sm:px-4">
+            <Button variant="link" class="px-2 sm:px-4 text-foreground">
               Blog</Button>
           </RouterLink>
         </nav>
@@ -72,6 +74,7 @@
 <style>
 .router-link-active button {
   text-decoration: underline;
+  @apply text-primary;
 }
 
 @font-face {
