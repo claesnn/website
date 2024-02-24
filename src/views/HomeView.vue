@@ -61,9 +61,9 @@ const navigate = (url: string) => {
     <CardHeader>
       <h1 class="font-[Kurale] text-5xl text-center">Photography</h1>
     </CardHeader>
-    <CardContent>
+    <CardContent class="p-10">
 
-      <Carousel class="mx-10 max-h-screen">
+      <Carousel class="mx-5 max-h-screen lg:mb-10">
         <CarouselContent>
           <CarouselItem><img src="/images/DSCF6640.webp" width="1125px" height="752px" /></CarouselItem>
           <CarouselItem><img src="/images/DSCF7046.webp" loading="lazy" width="1125px" height="752px" /></CarouselItem>
