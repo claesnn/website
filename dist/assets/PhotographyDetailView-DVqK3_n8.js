@@ -1,1 +1,0 @@
-import{d as a,a as o,W as t,o as s}from"./index-D026ZHEK.js";const i=a({__name:"PhotographyDetailView",setup(r){const e=`/images/${t().params.id}.webp`;return(n,m)=>(s(),o("img",{src:e,class:"max-h-screen mx-auto py-10"}))}});export{i as default};
