@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const IMAGECOUNT = 54
 
-// TBD: Get sizes and alt text for all images
+// TBD: add fallback image for width/height???
 const photos: string[] = [
   "A photo of a boat in Svanemøllen Harbour",
   "A photo of the Adventure Tower in south zealand",
@@ -15,7 +15,7 @@ const photos: string[] = [
   <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3">
     <RouterLink v-for="image in IMAGECOUNT" :key="image" :to="`/photography/${image - 1}`">
       <img
-        :srcset="`/images/${image - 1}-200.webp 200w, /images/${image - 1}-420.webp 420w, /images/${image - 1}-640.webp 640w, /images/${image - 1}-960.webp 960w,/images/${image - 1}-1280.webp 1280w`"
+        :srcset="`/images/${image - 1}-200.webp 200w, /images/${image - 1}-420.webp 420w, /images/${image - 1}-640.webp 640w`"
         :loading="image < 4 ? 'eager' : 'lazy'" :width="image < 10 ? 1280 : ''" :height="image < 10 ? 1920 : ''" />
     </RouterLink>
   </div>
