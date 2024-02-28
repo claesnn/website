@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const route = useRoute()
-const image = `/images/${route.params.id}.webp`
 </script>
 
 <template>
   <img
-    :src="image"
-    class="max-h-screen mx-auto py-10" />
+    :srcset="`/images/${route.params.id}-200.webp 200w, /images/${route.params.id}-420.webp 420w, /images/${route.params.id}-640.webp 640w, /images/${route.params.id}-960.webp 960w, /images/${route.params.id}-1280.webp 1280w`">
 </template>

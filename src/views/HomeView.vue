@@ -15,7 +15,7 @@ type Publication = {
   doi: string
 }
 
-const images = [25, 47, 39, 42, 46]
+const images = [24, 46, 38, 41, 45]
 
 const publications: Publication[] = [
   {
@@ -88,10 +88,11 @@ const navigate = (url: string) => {
     <CardContent class="px-10 py-6">
       <Carousel class="mx-5 mb-5">
         <CarouselContent>
-          <CarouselItem v-for="(image, index) in images" :key="index">
+          <CarouselItem v-for="(image, index) in images" :key="image">
             <RouterLink :to="`/photography/${image}`">
-              <img :src="`/images/${image}.webp`" width="1125px" height="752px"
-                :loading="index === 0 ? 'eager' : 'lazy'" />
+              <img
+                :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
+                width="1125px" height="752px" :loading="index === 0 ? 'eager' : 'lazy'" />
             </RouterLink>
           </CarouselItem>
         </CarouselContent>
