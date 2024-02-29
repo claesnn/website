@@ -4,11 +4,14 @@
   <div class="flex flex-col min-h-screen">
     <header class="header border-b">
       <div class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
+
         <RouterLink to="/">
           <div class="flex place-items-center">
-            <h1 class="font-[Kurale] text-lg sm:text-xl">CNN</h1>
+            <img src="/profile-pic.png" class="w-10 h-10 rounded-3xl mr-3">
+            <h1 class="font-[Open Sans] text-md sm:text-lg logo text-gray-500">CLAES NYMAND NILSSON</h1>
           </div>
         </RouterLink>
+
         <nav>
           <RouterLink to="/photography">
             <Button variant="link" class="px-2 sm:px-4 text-foreground">
@@ -73,6 +76,10 @@
 <style>
 .router-link-active button {
   text-decoration: underline;
+}
+
+.logo {
+  letter-spacing: 0.1rem;
 }
 
 @font-face {
