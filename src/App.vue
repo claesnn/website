@@ -7,8 +7,12 @@
 
         <RouterLink to="/">
           <div class="flex place-items-center">
-            <img src="/profile-pic.png" class="w-10 h-10 rounded-3xl mr-3">
-            <h1 class="font-[Open Sans] text-md sm:text-lg logo text-gray-500">CLAES NYMAND NILSSON</h1>
+            <img src="/profile-pic.png" class="w-10 h-10 rounded-3xl mr-2 sm:mr-3">
+            <div class="flex flex-col">
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">CLAES</h1>
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">NYMAND</h1>
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">NILSSON</h1>
+            </div>
           </div>
         </RouterLink>
 
