@@ -69,14 +69,13 @@ const navigate = (url: string) => {
 
 <template>
   <h1 class="font-[Kurale] text-4xl md:text-6xl text-center mt-10 mb-2">
-    Claes Nymand Nilsson
+    Hi, I'm Claes Nymand Nilsson
   </h1>
   <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
     I am biotech scientist with a flair for
-    <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>
-    and sports. I
-    believe in the value of sharing and on this site you can browse through all
-    of my published work.
+    <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>,
+    biotech
+    and sports.
   </p>
 
   <Card class="my-10">
@@ -89,11 +88,13 @@ const navigate = (url: string) => {
       <Carousel class="mx-5 mb-5">
         <CarouselContent>
           <CarouselItem v-for="(image, index) in images" :key="image">
-            <RouterLink :to="`/photography/${image}`">
-              <img
-                :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
-                width="1125px" height="752px" :loading="index === 0 ? 'eager' : 'lazy'" />
-            </RouterLink>
+            <div class="photo-container">
+              <RouterLink :to="`/photography/${image}`">
+                <img
+                  :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
+                  width="1125px" height="752px" :loading="index === 0 ? 'eager' : 'lazy'" />
+              </RouterLink>
+            </div>
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
@@ -158,3 +159,9 @@ const navigate = (url: string) => {
     </CardContent>
   </Card>
 </template>
+
+<style>
+.photo-container {
+  max-height: calc(100vh - 100px);
+}
+</style>
