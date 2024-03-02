@@ -73,7 +73,8 @@ const navigate = (url: string) => {
   </h1>
   <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
     I am biotech scientist with a flair for
-    <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>,
+    <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>
+    ,
     biotech
     and sports.
   </p>
