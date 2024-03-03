@@ -68,9 +68,11 @@ const navigate = (url: string) => {
 </script>
 
 <template>
+
   <h1 class="font-[Kurale] text-4xl md:text-6xl text-center mt-10 mb-2">
     Hi, I'm Claes Nymand Nilsson
   </h1>
+  <img src="/profile-pic.png" class="w-40 h-40 rounded-[5rem] my-5 mx-auto " />
   <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
     I am biotech scientist with a flair for
     <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>
@@ -164,5 +166,11 @@ const navigate = (url: string) => {
 <style>
 .photo-container {
   max-height: calc(100vh - 100px);
+}
+
+.profile-pic {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
 }
 </style>

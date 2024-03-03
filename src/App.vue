@@ -6,15 +6,15 @@
       <div class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
         <RouterLink to="/">
           <div class="flex place-items-center">
-            <img src="/profile-pic.png" class="w-10 h-10 rounded-3xl mr-2 sm:mr-3" />
+            <div class="w-1 h-10 bg-blue-500 mr-2"></div>
             <div class="flex flex-col">
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
                 CLAES
               </h1>
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
                 NYMAND
               </h1>
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-gray-500 -my-[2px]">
+              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
                 NILSSON
               </h1>
             </div>
