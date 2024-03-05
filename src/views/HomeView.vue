@@ -69,23 +69,31 @@ const navigate = (url: string) => {
 
 <template>
 
-  <h1 class="font-[Kurale] text-4xl md:text-6xl text-center mt-10 mb-2">
+  <h1 class="font-[Kurale] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-10 text-center">
     Hi, I'm Claes Nymand Nilsson
   </h1>
-  <img src="/profile-pic.png" class="w-40 h-40 rounded-[5rem] my-5 mx-auto " />
-  <p class="text-center text-slate-600 max-w-3xl mx-auto mb-16">
-    I am biotech scientist with a flair for
-    <RouterLink to="/photography"><u>photography</u></RouterLink>,
-    <RouterLink to="/software"><u>coding</u></RouterLink>,
-    biotech and sports.
-  </p>
+  <div class="max-w-3xl mx-auto mt-8">
+    <div class="flex ">
+      <img src="/profile-pic.png" class="w-20 h-20 rounded-[4rem] mr-5" />
+      <p class="">
+        I am Danish biotech scientist with a 1000 side-hobbies. I have a passion for
+        <RouterLink to="/photography"><u>photography</u></RouterLink>,
+        <RouterLink to="/software"><u>coding</u></RouterLink>,
+        biotech and sports, amongst other things. I share my thoughts on those hobbies and the world at large through my
+        <RouterLink to="/software"><u>blog</u></RouterLink>. Come follow along, when I dig into photo composition,
+        python package management, javascript framework-wars
+        and coffee tricks with diminishing returns.
+      </p>
 
-  <hr class="my-12 w-[95%] mx-auto">
+    </div>
+  </div>
+
+  <hr class="my-12">
 
   <RouterLink to="/photography">
-    <h1 class="font-[Kurale] text-5xl text-center mb-10">Photography</h1>
+    <h1 class="font-[Kurale] text-5xl mb-10">Photography</h1>
   </RouterLink>
-  <div class="grid grid-cols-2 gap-3">
+  <div class="grid sm:grid-cols-2 gap-3">
     <div v-for="(image, index) in images" :key="image">
       <RouterLink :to="`/photography/${image}`">
         <img
@@ -107,36 +115,38 @@ const navigate = (url: string) => {
     </RouterLink>
   </div>
 
-  <hr class="my-12 w-[95%] mx-auto">
+  <hr class="my-12">
 
-  <h1 class="font-[Kurale] text-5xl text-center mb-10">Software</h1>
+  <h1 class="font-[Kurale] text-5xl mb-10">Software</h1>
 
-  <Card class="max-w-sm mx-auto">
-    <CardHeader>
-      <h1 class="text-xl font-bold">Animal quiz</h1>
-    </CardHeader>
-    <CardContent>
+  <div class="bg-gray-50 py-10">
+    <Card class="max-w-sm mx-auto">
+      <CardHeader>
+        <h1 class="text-xl font-bold">Animal quiz</h1>
+      </CardHeader>
+      <CardContent>
 
-      <form @submit="onSubmit" class="flex flex-col">
-        <FormField v-slot="{ componentField }" name="animal">
-          <FormItem>
-            <FormLabel>Animal</FormLabel>
-            <FormControl>
-              <Input v-bind="componentField" class="w-full" />
-            </FormControl>
-            <FormDescription>Please enter the cutest animal</FormDescription>
-            <FormMessage />
-          </FormItem>
-        </FormField>
-        <Button type="submit" class="mt-4">Submit</Button>
-      </form>
-    </CardContent>
-  </Card>
+        <form @submit="onSubmit" class="flex flex-col">
+          <FormField v-slot="{ componentField }" name="animal">
+            <FormItem>
+              <FormLabel>Animal</FormLabel>
+              <FormControl>
+                <Input v-bind="componentField" class="w-full" />
+              </FormControl>
+              <FormDescription>Please enter the cutest animal</FormDescription>
+              <FormMessage />
+            </FormItem>
+          </FormField>
+          <Button type="submit" class="mt-4">Submit</Button>
+        </form>
+      </CardContent>
+    </Card>
+  </div>
 
-  <hr class="my-12 w-[95%] mx-auto">
+  <hr class="my-12 mx-auto">
 
 
-  <h1 class="font-[Kurale] text-5xl text-center mb-10">Biotech</h1>
+  <h1 class="font-[Kurale] text-5xl mb-10">Biotech</h1>
 
   <Table>
     <TableHeader>
