@@ -1,42 +1,77 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const menuOpen = ref(false)
+
+watchEffect(() => {
+  document.body.style.overflow = menuOpen.value ? "hidden" : "visible"
+})
+</script>
 
 <template>
   <div class="flex flex-col min-h-screen">
     <header class="header border-b">
-      <div class="flex justify-between px-3 max-w-7xl mx-auto py-2 place-items-center">
+      <div class="flex justify-between px-3 max-w-7xl mx-auto py-3 place-items-center">
         <RouterLink to="/">
-          <div class="flex place-items-center">
-            <div class="w-1 h-10 bg-blue-500 mr-2"></div>
-            <div class="flex flex-col">
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
-                CLAES
-              </h1>
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
-                NYMAND
-              </h1>
-              <h1 class="font-[Open Sans] text-sm sm:text-md logo text-blue-500 -my-[2px]">
-                NILSSON
-              </h1>
-            </div>
+          <div class="flex place-items-center" @click="menuOpen = false">
+            <h1 class="font-[Oswald] text-xl sm:text-2xl logo font-bold">
+              CLAESNN
+            </h1>
           </div>
         </RouterLink>
 
-        <nav>
-          <RouterLink to="/photography">
-            <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              Photography</Button>
-          </RouterLink>
-          <RouterLink to="/software">
-            <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              Software</Button>
-          </RouterLink>
-          <RouterLink to="/biotech">
-            <Button variant="link" class="px-2 sm:px-4 text-foreground">
-              Biotech</Button>
-          </RouterLink>
+        <nav class="flex place-items-center">
+          <button @click="menuOpen = !menuOpen" class="md:hidden"><svg v-if="!menuOpen"
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-menu">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg><svg v-if="menuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-x">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg></button>
+
+          <div class="hidden md:block">
+            <RouterLink to="/photography">
+              <Button variant="link" class="px-2 sm:px-4 text-foreground">
+                Photography</Button>
+            </RouterLink>
+            <RouterLink to="/software">
+              <Button variant="link" class="px-2 sm:px-4 text-foreground">
+                Software</Button>
+            </RouterLink>
+            <RouterLink to="/biotech">
+              <Button variant="link" class="px-2 sm:px-4 text-foreground">
+                Biotech</Button>
+            </RouterLink>
+          </div>
+
+
+
         </nav>
       </div>
     </header>
+    <nav v-if="menuOpen" class="w-full z-10 fixed top-[58px] flex">
+      <div @click="menuOpen = false" class=" bg-gray-900 h-screen flex-grow opacity-40"></div>
+      <aside class="w-[20rem] bg-white h-screen p-3 flex flex-col">
+        <RouterLink to="/photography">
+          <Button variant="link" class="text-foreground text-lg" @click="menuOpen = false">
+            Photography</Button>
+        </RouterLink>
+        <RouterLink to="/software">
+          <Button variant="link" class="text-foreground text-lg" @click="menuOpen = false">
+            Software</Button>
+        </RouterLink>
+        <RouterLink to="/biotech">
+          <Button variant="link" class="text-foreground text-lg" @click="menuOpen = false">
+            Biotech</Button>
+        </RouterLink>
+      </aside>
+    </nav>
+
+
     <main class="px-3 py-2 max-w-7xl mb-auto mx-auto w-full">
       <RouterView />
     </main>
@@ -100,6 +135,14 @@
   ascent-override: 0.96875;
   descent-override: 0.2414772727;
   line-gap-override: 0;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/oswald-700.woff2") format("woff2");
 }
 
 @font-face {
