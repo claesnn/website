@@ -34,6 +34,10 @@ watchEffect(() => {
             </svg></button>
 
           <div class="hidden md:block">
+            <RouterLink to="/blog">
+              <Button variant="link" class="px-2 sm:px-4 text-foreground">
+                Blog</Button>
+            </RouterLink>
             <RouterLink to="/photography">
               <Button variant="link" class="px-2 sm:px-4 text-foreground">
                 Photography</Button>
@@ -56,6 +60,10 @@ watchEffect(() => {
     <nav v-if="menuOpen" class="w-full z-10 fixed top-[58px] flex">
       <div @click="menuOpen = false" class=" bg-gray-900 h-screen flex-grow opacity-40"></div>
       <aside class="w-[20rem] bg-white h-screen p-3 flex flex-col">
+        <RouterLink to="/blog">
+          <Button variant="link" class="text-foreground text-lg" @click="menuOpen = false">
+            Blog</Button>
+        </RouterLink>
         <RouterLink to="/photography">
           <Button variant="link" class="text-foreground text-lg" @click="menuOpen = false">
             Photography</Button>

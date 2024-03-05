@@ -84,7 +84,11 @@ const navigate = (url: string) => {
         python package management, javascript framework-wars
         and coffee tricks with diminishing returns.
       </p>
-
+    </div>
+    <div class="flex min-w-full justify-center mt-6">
+      <RouterLink to="/blog">
+        <Button class="align-center px-8 py-4">Straight to the blog!</Button>
+      </RouterLink>
     </div>
   </div>
 
