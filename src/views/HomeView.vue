@@ -15,7 +15,7 @@ type Publication = {
   doi: string
 }
 
-const images = [24, 46, 38, 41, 45]
+const images = [24, 45, 2, 7, 38, 41,]
 
 const publications: Publication[] = [
   {
@@ -75,92 +75,84 @@ const navigate = (url: string) => {
   <img src="/profile-pic.png" class="w-40 h-40 rounded-[5rem] my-5 mx-auto " />
   <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
     I am biotech scientist with a flair for
-    <RouterLink to="/photography"><u>photography</u></RouterLink>, <RouterLink to="/software"><u>coding</u></RouterLink>
-    ,
-    biotech
-    and sports.
+    <RouterLink to="/photography"><u>photography</u></RouterLink>,
+    <RouterLink to="/software"><u>coding</u></RouterLink>,
+    biotech and sports.
   </p>
 
-  <Card class="my-10">
-    <CardHeader>
-      <RouterLink to="/photography">
-        <h1 class="font-[Kurale] text-5xl text-center">Photography</h1>
+
+  <RouterLink to="/photography">
+    <h1 class="font-[Kurale] text-5xl text-center mb-10">Photography</h1>
+  </RouterLink>
+  <div class="grid grid-cols-2 gap-3">
+    <div v-for="(image, index) in images" :key="image">
+      <RouterLink :to="`/photography/${image}`">
+        <img
+          :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
+          :loading="index === 0 ? 'eager' : 'lazy'" />
       </RouterLink>
+    </div>
+  </div>
+
+  <div class="flex justify-center mt-3">
+    <RouterLink to="/photography">
+      <Button variant="ghost" to="/photography"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" class="lucide lucide-more-horizontal">
+          <circle cx="12" cy="12" r="1" />
+          <circle cx="19" cy="12" r="1" />
+          <circle cx="5" cy="12" r="1" />
+        </svg></Button>
+    </RouterLink>
+  </div>
+
+  <h1 class="font-[Kurale] text-5xl text-center mt-16 mb-10">Software</h1>
+
+  <Card class="max-w-sm mx-auto">
+    <CardHeader>
+      <h1 class="text-xl font-bold">Animal quiz</h1>
     </CardHeader>
-    <CardContent class="px-10 py-6">
-      <Carousel class="mx-5 mb-5">
-        <CarouselContent>
-          <CarouselItem v-for="(image, index) in images" :key="image">
-            <div class="photo-container">
-              <RouterLink :to="`/photography/${image}`">
-                <img
-                  :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
-                  width="1125px" height="752px" :loading="index === 0 ? 'eager' : 'lazy'" />
-              </RouterLink>
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-      <div class="flex justify-center">
-        <RouterLink to="/photography">
-          <Button variant="outline" to="/photography">View More</Button>
-        </RouterLink>
-      </div>
+    <CardContent>
+
+      <form @submit="onSubmit" class="flex flex-col">
+        <FormField v-slot="{ componentField }" name="animal">
+          <FormItem>
+            <FormLabel>Animal</FormLabel>
+            <FormControl>
+              <Input v-bind="componentField" class="w-full" />
+            </FormControl>
+            <FormDescription>Please enter the cutest animal</FormDescription>
+            <FormMessage />
+          </FormItem>
+        </FormField>
+        <Button type="submit" class="mt-4">Submit</Button>
+      </form>
     </CardContent>
   </Card>
 
-  <Card class="my-10">
-    <CardHeader>
-      <h1 class="font-[Kurale] text-5xl text-center">Software</h1>
-    </CardHeader>
-    <CardContent>
-      <Card class="max-w-sm p-6 mx-auto">
-        <h1 class="text-xl font-bold mb-3">Animal quiz</h1>
-        <form @submit="onSubmit" class="flex flex-col">
-          <FormField v-slot="{ componentField }" name="animal">
-            <FormItem>
-              <FormLabel>Animal</FormLabel>
-              <FormControl>
-                <Input v-bind="componentField" class="w-full" />
-              </FormControl>
-              <FormDescription>Please enter the cutest animal</FormDescription>
-              <FormMessage />
-            </FormItem>
-          </FormField>
-          <Button type="submit" class="mt-4">Submit</Button>
-        </form>
-      </Card>
-    </CardContent>
-  </Card>
 
-  <Card class="my-10">
-    <CardHeader>
-      <h1 class="font-[Kurale] text-5xl text-center">Biotech</h1>
-    </CardHeader>
-    <CardContent>
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Year</TableHead>
-            <TableHead>Title</TableHead>
-            <TableHead>Authors</TableHead>
-            <TableHead>DOI</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow v-for="publication in publications" class="hover:cursor-pointer"
-            @click="() => navigate(`https://doi.org/${publication.doi}`)">
-            <TableCell>{{ publication.year }}</TableCell>
-            <TableCell>{{ publication.title }}</TableCell>
-            <TableCell v-html="publication.authors"></TableCell>
-            <TableCell>{{ publication.doi }}</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </CardContent>
-  </Card>
+  <h1 class="font-[Kurale] text-5xl text-center mt-16 mb-10">Biotech</h1>
+
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Year</TableHead>
+        <TableHead>Title</TableHead>
+        <TableHead>Authors</TableHead>
+        <TableHead>DOI</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow v-for="publication in publications" class="hover:cursor-pointer"
+        @click="() => navigate(`https://doi.org/${publication.doi}`)">
+        <TableCell>{{ publication.year }}</TableCell>
+        <TableCell>{{ publication.title }}</TableCell>
+        <TableCell v-html="publication.authors"></TableCell>
+        <TableCell>{{ publication.doi }}</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+
 </template>
 
 <style>

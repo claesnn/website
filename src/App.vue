@@ -139,6 +139,17 @@ watchEffect(() => {
 
 @font-face {
   font-display: swap;
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/open-sans-700.woff2") format("woff2");
+  ascent-override: 0.96875;
+  descent-override: 0.2414772727;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-display: swap;
   font-family: "Oswald";
   font-style: normal;
   font-weight: 700;
