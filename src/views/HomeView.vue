@@ -73,13 +73,14 @@ const navigate = (url: string) => {
     Hi, I'm Claes Nymand Nilsson
   </h1>
   <img src="/profile-pic.png" class="w-40 h-40 rounded-[5rem] my-5 mx-auto " />
-  <p class="text-center mb-16 text-slate-600 max-w-3xl mx-auto">
+  <p class="text-center text-slate-600 max-w-3xl mx-auto mb-16">
     I am biotech scientist with a flair for
     <RouterLink to="/photography"><u>photography</u></RouterLink>,
     <RouterLink to="/software"><u>coding</u></RouterLink>,
     biotech and sports.
   </p>
 
+  <hr class="my-12 w-[95%] mx-auto">
 
   <RouterLink to="/photography">
     <h1 class="font-[Kurale] text-5xl text-center mb-10">Photography</h1>
@@ -106,7 +107,9 @@ const navigate = (url: string) => {
     </RouterLink>
   </div>
 
-  <h1 class="font-[Kurale] text-5xl text-center mt-16 mb-10">Software</h1>
+  <hr class="my-12 w-[95%] mx-auto">
+
+  <h1 class="font-[Kurale] text-5xl text-center mb-10">Software</h1>
 
   <Card class="max-w-sm mx-auto">
     <CardHeader>
@@ -130,8 +133,10 @@ const navigate = (url: string) => {
     </CardContent>
   </Card>
 
+  <hr class="my-12 w-[95%] mx-auto">
 
-  <h1 class="font-[Kurale] text-5xl text-center mt-16 mb-10">Biotech</h1>
+
+  <h1 class="font-[Kurale] text-5xl text-center mb-10">Biotech</h1>
 
   <Table>
     <TableHeader>
