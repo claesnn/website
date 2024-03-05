@@ -74,7 +74,7 @@ const navigate = (url: string) => {
   </h1>
   <div class="max-w-3xl mx-auto mt-8">
     <div class="flex ">
-      <img src="/profile-pic.png" class="w-20 h-20 rounded-[4rem] mr-5" />
+      <img src="/profile-pic.png" width="80" height="80" class="h-20 w-20 rounded-[4rem] mr-5" />
       <p class="">
         I am Danish biotech scientist with a 1000 side-hobbies. I have a passion for
         <RouterLink to="/photography"><u>photography</u></RouterLink>,
@@ -102,7 +102,7 @@ const navigate = (url: string) => {
       <RouterLink :to="`/photography/${image}`">
         <img
           :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
-          :loading="index === 0 ? 'eager' : 'lazy'" />
+          :loading="index < 2 ? 'eager' : 'lazy'" :width="index < 2 ? 1280 : ''" :height="index < 2 ? 854 : ''" />
       </RouterLink>
     </div>
   </div>
