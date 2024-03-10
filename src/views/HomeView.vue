@@ -41,24 +41,31 @@ const form = useForm({
 
 const { toast } = useToast()
 
+const message = ref("")
+
 const onSubmit = form.handleSubmit((values) => {
   const animal = values.animal.toLowerCase()
-  const message =
-    animal.includes("cat") || animal.includes("kitten")
-      ? "🎉🎉🎉 You guessed it! Meow! 🎉🎉🎉"
-      : animal.includes("dog")
-        ? "Close, but no cigar!"
-        : animal.includes("dolphin")
-          ? "Great guess, but no, equally playful though!"
-          : animal.includes("shark")
-            ? "No, but they're both predators"
-            : animal.includes("hamster") ||
-              animal.includes("guinea pig") ||
-              animal.includes("rabbit")
-              ? "No, but they're both small and cute"
-              : "Try again!"
+
+  if (animal.includes("cat") || animal.includes("kitten")) {
+    message.value = "🎉🎉🎉 You guessed it! Meow! 🎉🎉🎉"
+  } else if (animal.includes("dog")) {
+    message.value = "Close, but no cigar!"
+  } else if (animal.includes("dolphin")) {
+    message.value = "Great guess, but no, equally playful though!"
+  } else if (animal.includes("shark")) {
+    message.value = "No, but they're both predators"
+  } else if (
+    animal.includes("hamster") ||
+    animal.includes("guinea pig") ||
+    animal.includes("rabbit")
+  ) {
+    message.value = "No, but they're both small and cute"
+  } else {
+    message.value = "Try again!"
+  }
+
   toast({
-    description: message,
+    description: message.value,
   })
 })
 
@@ -74,13 +81,13 @@ const navigate = (url: string) => {
   </h1>
   <div class="max-w-3xl mx-auto mt-8">
     <div class="flex ">
-      <img src="/profile-pic.png" width="80" height="80" class="h-20 w-20 rounded-[4rem] mr-5" />
+      <img src="/profile-pic-200.webp" width="80" height="80" class="h-20 w-20 rounded-[4rem] mr-5" />
       <p class="">
         I am Danish biotech scientist with a 1000 side-hobbies. I have a passion for
         <RouterLink to="/photography"><u>photography</u></RouterLink>,
         <RouterLink to="/software"><u>coding</u></RouterLink>,
         biotech and sports, amongst other things. I share my thoughts on those hobbies and the world at large through my
-        <RouterLink to="/software"><u>blog</u></RouterLink>. Come follow along, when I dig into photo composition,
+        <RouterLink to="/blog"><u>blog</u></RouterLink>. Come follow along, when I dig into photo composition,
         python package management, javascript framework-wars
         and coffee tricks with diminishing returns.
       </p>
@@ -177,11 +184,5 @@ const navigate = (url: string) => {
 <style>
 .photo-container {
   max-height: calc(100vh - 100px);
-}
-
-.profile-pic {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-
 }
 </style>
