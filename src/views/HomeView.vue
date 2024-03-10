@@ -101,7 +101,7 @@ const navigate = (url: string) => {
     <div v-for="(image, index) in images" :key="image">
       <RouterLink :to="`/photography/${image}`">
         <img
-          :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-640.webp 640w, /images/${image}-960.webp 960w,/images/${image}-1280.webp 1280w`"
+          :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-420.webp 640w, /images/${image}-640.webp 960w,/images/${image}-640.webp 1280w`"
           :loading="index < 2 ? 'eager' : 'lazy'" :width="index < 2 ? 1280 : ''" :height="index < 2 ? 854 : ''" />
       </RouterLink>
     </div>
