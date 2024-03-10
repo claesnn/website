@@ -28,6 +28,16 @@ const router = createRouter({
       name: "photography-detail",
       component: () => import("../views/PhotographyDetailView.vue"),
     },
+    {
+      path: "/software",
+      name: "software",
+      component: () => import("../views/SoftwareView.vue"),
+    },
+    {
+      path: "/biotech",
+      name: "biotech",
+      component: () => import("../views/BiotechView.vue"),
+    }
   ],
 })
 

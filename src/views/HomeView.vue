@@ -6,6 +6,13 @@ import { object, string } from "yup"
 
 useHead({
   title: "Claes Nymand Nilsson - Photography, Biotech and Programmming",
+  meta: [
+    {
+      name: "description",
+      content:
+        "I am Danish biotech scientist with a thousand side-hobbies. I have a passion for photography, coding, biotech and sports, amongst other things. I share my thoughts on those hobbies and the world at large through my blog. Come follow along, when I dig into photo composition, python package management, javascript framework-wars and coffee tricks with diminishing returns.",
+    },
+  ],
 })
 
 type Publication = {
@@ -126,9 +133,10 @@ const navigate = (url: string) => {
   </h1>
   <div class="max-w-3xl mx-auto mt-8">
     <div class="flex ">
-      <img src="/profile-pic-200.webp" width="80" height="80" class="h-20 w-20 rounded-[4rem] mr-5" />
+      <img src="/profile-pic-200.webp" width="80" height="80" class="h-20 w-20 rounded-[4rem] mr-5"
+        alt="Profile picture of Claes Nymand Nilsson" />
       <p class="">
-        I am Danish biotech scientist with a 1000 side-hobbies. I have a passion for
+        I am Danish biotech scientist with a thousand side-hobbies. I have a passion for
         <RouterLink to="/photography"><u>photography</u></RouterLink>,
         <RouterLink to="/software"><u>coding</u></RouterLink>,
         biotech and sports, amongst other things. I share my thoughts on those hobbies and the world at large through my
