@@ -15,7 +15,52 @@ type Publication = {
   doi: string
 }
 
-const images = [24, 45, 2, 7, 38, 41,]
+type Photo = {
+  id: number
+  width: number
+  height: number
+  alt: string
+}
+
+const photos: Photo[] = [
+  {
+    id: 24,
+    width: 1280,
+    height: 853,
+    alt: "A photo of a rock in the ocean in Iceland"
+  },
+  {
+    id: 45,
+    width: 1280,
+    height: 853,
+    alt: "A photo of a road with flowers on each side leading to a mountain in Iceland"
+  },
+  {
+    id: 2,
+    width: 1280,
+    height: 1920,
+    alt: "A photo of the adventure tower in south zealand"
+  },
+  {
+    id: 7,
+    width: 1280,
+    height: 1920,
+    alt: "A photo of the Geysir in Iceland"
+  },
+  {
+    id: 38,
+    width: 1280,
+    height: 853,
+    alt: "A photo of waterfalls in Iceland"
+  },
+  {
+    id: 41,
+    width: 1280,
+    height: 853,
+    alt: "A photo of the oldest church in Iceland with hayballs on the field"
+  }
+]
+
 
 const publications: Publication[] = [
   {
@@ -105,11 +150,11 @@ const navigate = (url: string) => {
     <h1 class="font-[Kurale] text-5xl mb-10">Photography</h1>
   </RouterLink>
   <div class="grid sm:grid-cols-2 gap-3">
-    <div v-for="(image, index) in images" :key="image">
-      <RouterLink :to="`/photography/${image}`">
+    <div v-for="(image, index) in photos" :key="image.id">
+      <RouterLink :to="`/photography/${image.id}`">
         <img
-          :srcset="`/images/${image}-200.webp 200w, /images/${image}-420.webp 420w, /images/${image}-420.webp 640w, /images/${image}-640.webp 960w,/images/${image}-640.webp 1280w`"
-          :loading="index < 2 ? 'eager' : 'lazy'" :width="index < 2 ? 1280 : ''" :height="index < 2 ? 854 : ''" />
+          :srcset="`/images/${image.id}-200.webp 200w, /images/${image.id}-420.webp 420w, /images/${image.id}-420.webp 640w, /images/${image.id}-640.webp 960w,/images/${image.id}-640.webp 1280w`"
+          :loading="index < 2 ? 'eager' : 'lazy'" :alt="image.alt" :width="image.width" :height="image.height" />
       </RouterLink>
     </div>
   </div>
