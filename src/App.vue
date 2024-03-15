@@ -129,7 +129,6 @@ watchEffect(() => {
       </div>
     </div>
   </footer>
-  <Toaster />
 </template>
 
 <style>

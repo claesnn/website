@@ -1,1 +1,0 @@
-import{d as s,c as t,a as o,O as n,u as r,T as c,o as u}from"./index-cjKjgz_P.js";const m=s({__name:"[id]",setup(i){const e=c(),a="id"in e.params?e.params.id:"default";return(l,p)=>(u(),t("div",null,[o("h1",null,"Blog post "+n(r(a)),1)]))}});export{m as default};

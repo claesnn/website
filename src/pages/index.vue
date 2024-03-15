@@ -185,7 +185,7 @@ const navigate = (url: string) => {
             </CardHeader>
             <CardContent>
 
-                <form @submit="onSubmit" class="flex flex-col" v-if="!message">
+                <form @submit="onSubmit" :class="`flex flex-col ${message ? 'hidden' : ''}`">
                     <FormField v-slot="{ componentField }" name="animal">
                         <FormItem>
                             <FormLabel>Animal</FormLabel>
@@ -198,7 +198,7 @@ const navigate = (url: string) => {
                     </FormField>
                     <Button type="submit" class="mt-4">Submit</Button>
                 </form>
-                <div v-if="message" class="space-y-4">
+                <div :class="`space-y-4 ${!message ? 'hidden' : ''}`">
                     <p>{{ message }}</p>
                     <Button @click="() => message = ''">Try again</Button>
                 </div>
