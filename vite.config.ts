@@ -7,13 +7,16 @@ import AutoImport from 'unplugin-auto-import/vite'
 import tailwind from "tailwindcss"
 import autoprefixer from "autoprefixer"
 import { unheadVueComposablesImports } from '@unhead/vue'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    VueRouter({}),
     vue(),
     Components({ dts: true }),
-    AutoImport({ dts: true, imports: ['vue', 'vue-router', unheadVueComposablesImports] }),
+    AutoImport({ dts: true, imports: ['vue', VueRouterAutoImports, unheadVueComposablesImports] }),
   ],
   css: {
     postcss: {

@@ -86,7 +86,14 @@ watchEffect(() => {
   </div>
   <footer class="footer border-t border-slate-200 mt-5">
     <div class="flex justify-between max-w-7xl mx-auto px-3 py-2 place-items-center">
-      <h2>Made with ❤️ by Claes</h2>
+      <a href="https://github.com/claesnn/website" class="flex text-sm place-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+        <h2>Check out source code</h2>
+      </a>
       <div>
         <a href="https://github.com/claesnn">
           <Button variant="ghost">

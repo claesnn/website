@@ -1,44 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHistory } from "vue-router/auto"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: () => import("../views/HomeView.vue"),
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
-      path: "/blog",
-      name: "blog",
-      component: () => import("../views/BlogView.vue"),
-    },
-    {
-      path: "/photography",
-      name: "photography",
-      component: () => import("../views/PhotographyView.vue"),
-    },
-    {
-      path: "/photography/:id",
-      name: "photography-detail",
-      component: () => import("../views/PhotographyDetailView.vue"),
-    },
-    {
-      path: "/software",
-      name: "software",
-      component: () => import("../views/SoftwareView.vue"),
-    },
-    {
-      path: "/biotech",
-      name: "biotech",
-      component: () => import("../views/BiotechView.vue"),
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
     }
-  ],
+  },
 })
 
 export default router
